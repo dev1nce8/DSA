@@ -198,6 +198,18 @@ export default class LinkedList {
     };
     traverse(this.#root);
   }
+
+  // ADDITION
+  forEach(fn) {
+    const traverse = (root, i = 0) => {
+      if (!root) return;
+      fn(root.value, i);
+
+      traverse(root.next, (i += 1));
+    };
+
+    traverse(this.#root);
+  }
 }
 
 class Node {
