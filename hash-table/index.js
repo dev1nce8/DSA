@@ -53,7 +53,7 @@ export default class HashMap {
     const h = hash(key, this.#capacity);
     let found = false;
     if (this.#bucket[h]) {
-      this.#bucket[h].forEach((v, i) => {
+      this.#bucket[h].forEach((v) => {
         if (!found) {
           if (v[0] === key) {
             found = true;
